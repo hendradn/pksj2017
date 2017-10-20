@@ -45,7 +45,7 @@ TEST
 ## Langkah instalasi OS untuk penetrasi
 1) Siapkan Virtualbox dan file .iso yang akan kita gunakan, disini kami menggunakan Ubuntu Desktop versi 17.04
 2) Install Virtualbox kemudian buat new, kemudian isikan nama dan OS yang akan diintall pada virtualbox
-(Gambar 14}
+![Gambar 14](https://lh6.googleusercontent.com/lpcqCZ7qs-jnVQZq9_w3qkZhzVM6hp1XoaHx--DtacDpETBArLz_Yw0_fawgwod0ldu2AZcKIM3eM6w=w1366-h662)
 3) Masukkan jumlah ram yang akan digunakan pada OS virtual, kemudian lanjutkan proses instalasi secara default
 4) Start OS virtual yang tadi telah kita buat, kemudian pilih file iso yang telah kita download
 (Gambar 15}
