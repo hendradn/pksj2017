@@ -1,8 +1,7 @@
 # Pendahuluan
-# Dasarteori(penjelasanOS dansemuatools yang 
-digunakan)
+# Dasarteori
 ## OS
-Kami menggunakan os a dan os B
+Kami menggunakan os ubuntu-14.04.5-server-i386 sebagai server dan os ubuntu-17.04-dekstop
 ## TOOLS
 # Ujipenetrasi1
 ## LangkahinstalasiUbuntu server
@@ -43,6 +42,9 @@ TEST
 14. Akan muncul tawaran install software , piloih opensshserver
 15. Instalasi sealesai
 {Gambar 12}
-## LangkahinstalasiOS untukpenetrasi
-## LangkahinstalasiSSH server
-## LangkahujipenetrasidenganSSH brute force tools
+## Langkah instalasi OS untukpenetrasi
+## Langkah instalasi SSH server
+1. Login ke ubuntu server
+2. Ketikkan perinta sudo apt-get install openssh-server
+{Gambar 13}
+## Langkah uji penetrasi dengan SSH brute force tools
