@@ -42,7 +42,16 @@ TEST
 14. Akan muncul tawaran install software , piloih opensshserver
 15. Instalasi sealesai
 {Gambar 12}
-## Langkah instalasi OS untukpenetrasi
+## Langkah instalasi OS untuk penetrasi
+1) Siapkan Virtualbox dan file .iso yang akan kita gunakan, disini kami menggunakan Ubuntu Desktop versi 17.04
+2) Install Virtualbox kemudian buat new, kemudian isikan nama dan OS yang akan diintall pada virtualbox
+(Gambar 14}
+3) Masukkan jumlah ram yang akan digunakan pada OS virtual, kemudian lanjutkan proses instalasi secara default
+4) Start OS virtual yang tadi telah kita buat, kemudian pilih file iso yang telah kita download
+(Gambar 15}
+5) Kemudian lakukan penginstalan ubuntu dengan memilih Install Ubuntu, lanjutkan hingga proses penginstalan selesai secara default
+{Gambar 16}
+6) Restart Ubuntu
 ## Langkah instalasi SSH server
 1. Login ke ubuntu server
 2. Ketikkan perinta sudo apt-get install openssh-server
