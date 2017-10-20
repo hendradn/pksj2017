@@ -13,7 +13,7 @@ Memory : 4 Gb
 
 ![Gambar 1](https://lh4.googleusercontent.com/otvECxc5tNlKsvXrDGEjs7sjfI_MFYzyJIBEX7Wnaxf6gGwMV9gx3OtAt2XtSvTYNw5eT_a43PCO968=w1366-h662)
 
-2. Siapkan iso ubuntu server yang dapat didownload di : http://kartolo.sby.datautama.net.id/ubuntu-cd/17.10/ubuntu-17.10-server-amd64.iso
+2. Siapkan iso ubuntu server yang dapat didownload di : http://releases.ubuntu.com/14.04/ubuntu-14.04.5-desktop-amd64.iso
 
 3. Pilih mesin viortual yang telah dibuat, dan klik start. Pilih iso ubuntu server.
 ![Gambar 2](https://lh5.googleusercontent.com/EOLLyZUQdAwDyesL9oq5RJHmDXDc0lDGWMcsCCjvGLiNe_Ncd527Q2X04BI9mxHRvnZtViv0OYngnh8=w1366-h662)
