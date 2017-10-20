@@ -11,7 +11,7 @@ Type : Linux
 Version : Ubuntu (64-bit)
 Memory : 4 Gb
 
-{Gambar 1}
+![Gambar 1](https://drive.google.com/file/d/0B812GaIMaa4eU1otYUZjeFRoOW8/view?usp=sharing)
 
 2. Siapkan iso ubuntu server yang dapat didownload di : http://kartolo.sby.datautama.net.id/ubuntu-cd/17.10/ubuntu-17.10-server-amd64.iso
 
