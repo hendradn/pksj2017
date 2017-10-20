@@ -1,11 +1,11 @@
-#Pendahuluan
-#Dasarteori(penjelasanOS dansemuatools yang 
+# Pendahuluan
+# Dasarteori(penjelasanOS dansemuatools yang 
 digunakan)
-##OS
+## OS
 Kami menggunakan os a dan os B
-##TOOLS
-#Ujipenetrasi1
-##LangkahinstalasiUbuntu server
+## TOOLS
+# Ujipenetrasi1
+## LangkahinstalasiUbuntu server
 1. Buka Oracle VM virtual Box Manager, Buat virtual mesin baru dengan mengklik ikon NEW pada toolbar dan isi option dengan :
 name : Ubuntu Server
 Type : Linux
@@ -43,6 +43,6 @@ TEST
 14. Akan muncul tawaran install software , piloih opensshserver
 15. Instalasi sealesai
 {Gambar 12}
-##LangkahinstalasiOS untukpenetrasi
-##LangkahinstalasiSSH server
-##LangkahujipenetrasidenganSSH brute force tools
+## LangkahinstalasiOS untukpenetrasi
+## LangkahinstalasiSSH server
+## LangkahujipenetrasidenganSSH brute force tools
