@@ -47,9 +47,9 @@ Memory : 4 Gb
 ![Gambar 14](https://lh6.googleusercontent.com/lpcqCZ7qs-jnVQZq9_w3qkZhzVM6hp1XoaHx--DtacDpETBArLz_Yw0_fawgwod0ldu2AZcKIM3eM6w=w1366-h662)
 3) Masukkan jumlah ram yang akan digunakan pada OS virtual, kemudian lanjutkan proses instalasi secara default
 4) Start OS virtual yang tadi telah kita buat, kemudian pilih file iso yang telah kita download
-(Gambar 15}
+![Gambar 15](https://lh4.googleusercontent.com/4OQpDznPQNUxbORMHQvcXdrrujMjxNo4Bfujou6Abz-aulisRcXNWIPJXwI6lLBYOIAyZ0WfddgHSNo=w1366-h613-rw)
 5) Kemudian lakukan penginstalan ubuntu dengan memilih Install Ubuntu, lanjutkan hingga proses penginstalan selesai secara default
-{Gambar 16}
+![Gambar 16](https://lh6.googleusercontent.com/Vjcm_ELQDUernm4hl1epFmRhVC1-5Jl1e7vM8C85Jeklke8qnY_C3JTrDbwWYvlFnc1iIw2PtZ8_X2s=w1366-h613-rw)
 6) Restart Ubuntu
 ## Langkah instalasi SSH server
 1. Login ke ubuntu server
