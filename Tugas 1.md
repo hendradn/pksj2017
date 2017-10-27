@@ -99,12 +99,78 @@ Memory : 4 Gb
 2. Ketikkan perinta sudo apt-get install openssh-server
 ![Gambar 13](https://lh5.googleusercontent.com/ZtAsqYWdIwFnRhcGBFAXSzLT71GQqBLvLJXHcqnVcoNihDBRyxDgZZr0TF3l7JUf86GjYxA_DdaZa0w=w1366-h662-rw)
 ## Langkah uji penetrasi dengan SSH brute force tools
+LANGKAH-LANGKAH UJI PENETRASI
+1. Setting virtual network ubuntu server dan ubuntu dekstop ke host only, dan pastikan promiscuous mode allow all
+![Gambar 1](https://lh4.googleusercontent.com/Z4MH4Cs85bQsLi80n2L30h7Xjwu8TLOGhj9HeyJLXIriK65vCg_d09dqlj4N-g3jo5Y4qcmvzo6vDtA=w1366-h613)
+
+2. Install openssh-server di ubuntu server dengan mengetikkan perintah :
+sudo apt-get install openssh-server
+
+3. Install hydra di ubuntu server dengan mengetikkan perintah :
+sudo apt-get install hydra hydra-gtk 
+
+4. Install ncrack di ubuntu server dengan mendownload file tarnya di https://nmap.org/ncrack/dist/ncrack-0.5.tar.gz 
+
+5. Install dependensi libssl-dev agar ncrack bisa diinstall dengan mengetikkan perintah :
+sudo apt-get install libssl-dev
+
+6. Jalankan perintah :
+tar -xzf ncrack-0.5.tar.gz
+cd ncrack-0.5
+./configure
+make
+su root
+make install
+
+7. Tes koneksi ssh dengan cara remote ubuntu server lewat ubuntu dekstop dengan mengetikkan perintah : 
+ssh (username_ubuntu server)@(ip_ubuntu server)
+![Gambar 2](https://lh3.googleusercontent.com/w8XeoNsOV1JJxs9vRcOBcfwhlk57VORYWiDJb7abw0Am-BZWu_c0RQDA3e2gvM429imbh3rqVP5ZlMM=w1366-h613-rw)
+
+8. Buka hydra-gtk
+* isi ip server pada kolom single target di tab target
+* isi protocol ke ssh
+* Centang show attempt
+![Gambar 3](https://lh6.googleusercontent.com/W3jIgGj9oaekKk3UbOEodUuhik8FRauy_LfTDwqtujp8SnVgcKtwa8lomG8sSCnyfNWjai77Mx9-KSc=w1366-h613)
+
+* Pada tab passwords, kolom username dan password dapat diisi 1 kata atau beberapa kata yang terbungkus dalam file teks
+* Pada tab password metode penyerangan dapat dilakukan dengan list files atau generate otomatis
+![Gambar 5](https://lh3.googleusercontent.com/QQmmpw57drgITkq9IUmeqU-yi2G9M38k4VNhxu4xFNlA_B-pBEKQzCOozAdmVdPa6YTQLexSOfqj5GQ=w1366-h613-rw)
+* Untuk memulai, buka tab start dan klik tombol start
+* Jika ketemu akan muncul seperti tampilan dibawah
+![Gambar 4](https://lh6.googleusercontent.com/GbBGNwECXp9daIRTfgvK7JCkE8c6szXd5MG3WD6r0sX5Y7WdCPRwfSY_2gQE2f9hWAp_feyeBlTKhu4=w1366-h613)
+
+9. Untuk ncrack, ketikkan perintah berikut di terminal :
+ncrack -p 22 --user {username ubuntu server} -P (LISt password.txt) (IP ubuntu server) 
+![Gambar 6](https://lh5.googleusercontent.com/VTYKJ7EsggRSEXY9qN-84KJ1AO8g3qJFujPAND0jX8589PwEPHcbdCTEIq_V4kBELJbfL13TlvdKYmM=w1366-h613-rw)
+
+* Jika berhasil, tampilan akan seperti berikut :
+![Gambar 7](https://lh5.googleusercontent.com/g98EX0OAXe0LVwrPws1CMvwgtSY4xMBYh_IG0oNcvQkcpPKFOPyLGx2F1Cbbw44hrHTx7fK9F83h-hg=w1366-h613)
 
 # Ujipenetrasi 2
 ## Langkah uji penetrasi dengan SSH brute force tools
+1. Install fail2ban dengan command sudo apt-get install fail2ban
+2. Copy file fail2ban.conf menjadi fail2ban.local dengan command cp /etc/failban/failban2.conf /etc/failban/fail2ban.local
+3. Copy file jail.conf menjadi jail.local dengan command cp /etc/failban/jail.conf /etc/failban/jail.local
+4. Ubah bantime, findtime, dan maxretry pada jail.local sesuai dengan keinginan admin
+(bantime=jumlah waktu(detik) yang digunakan untuk menge-ban host/IP jika telah melebihi jumlah akses(maxretry) selama waktu yang dibatasi(findtime),
+findtime=jumlah waktu(detik) maksimal yang ditentukan apabila host/IP melakukan sejumlah akses(maxretry),
+maxretry=jumlah akses yang diberikan kepada suatu host/IP apabila melebihi maxretry dalam suatu waktu(findtime) maka host/IP akan di ban sementara(bantime))
+![Gambar 8](https://lh5.googleusercontent.com/q3fS8aLGQx9woujhNQtbYRk3pvVDjTrB3pZkySjXpf9Zofy9kYa7Q9oad2Y5bploB1ZAia7iuePyABo=w1366-h613-rw)
+5. Jalankan perintah fail2ban-client start pada terminal untuk memulai fail2ban
+6. Lakukan penetrasi menggunakan hydra, pada password list, password user kami ada pada try 77, tetapi hydra tidak memberikan status berhasil dan tetap melakukan attempt,
+![Gambar 9](https://lh4.googleusercontent.com/oDba0p90J50YrrnGiLoUTtI5hQmBrTPT1xajyw7IiZOQfYIn_RBAIXo2hUbo5ZJTy2MlxgGqPvEvDmE=w1366-h613-rw)
+7. Jalankan perintah fail2ban-client status (nama jail) untuk mengecek status jail, akan menampilkan jumlah host/IP yang sedang di ban dan IP dari host tersebut
+![Gambar 10](https://lh6.googleusercontent.com/DY0P4ul0EBSSVKHJJKUxrxrLS-3rT2y6upP9xkFBBIUy9wICTLDXQCGXO1qoHT-6WiVs-toZ3NTqDiI=w1366-h613)
+
+Tambahan
+1. Kami mencoba untuk merubah urutan password pada password list untuk melihat apakah fail2ban bekerja
+2. Password kami pindah pada urutan 7
+3. Hydra berhasil melakukan attack apabila attempt yang dilakukan kurang dari maxretry
+![Gambar 11](https://lh3.googleusercontent.com/4u_Ul6T_XryIy0coklEcc3zrwB0j5U9Pp4fWwoD2va4enX5FywbZfLhcgMumfq4SyifZf2IDz9u-6YA=w1366-h613-rw)
 
 # Refrensi
-. http://www.candra.web.id/mengenal-ubuntu-server/
-. https://balajarlinux.wordpress.com/2008/02/04/pengenalan-apa-itu-ubuntu-serta-sejarah/
-. https://tools.kali.org/password-attacks/hydra
-. https://nmap.org/ncrack/
+  * http://www.candra.web.id/mengenal-ubuntu-server/
+  * https://balajarlinux.wordpress.com/2008/02/04/pengenalan-apa-itu-ubuntu-serta-sejarah/
+  * https://tools.kali.org/password-attacks/hydra
+  * https://nmap.org/ncrack/
+  
