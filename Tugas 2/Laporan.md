@@ -39,6 +39,59 @@ WPScan adalah scanner keamanan yang memeriksa keamanan WordPress menggunakan met
 # Uji penetrasi SQL Injection
 ## Langkah instalasi wordpress dan Vulnerable Plugin
 
+1. Buka terminal
+2. Install LAMP dengan cara mengetikkan perintah berikut :
+
+sudo apt-get install apache2 mysql-server php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd
+
+3. Buat sebuah database di mysql yang digunakan sebagai database wordpress. dengan mengetikkan perintah berikut :
+
+mysql -u root -p;
+CREATE DATABASE wordpress;
+GRANT ALL ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'root';
+FLUSH PRIVILEGES;
+EXIT;
+
+3. Unduh wordpress tarball di http://wordpress.org/latest.tar.gz
+4. Ekstrak file ke direktori /var/www/html dengan mengetikkan perintah 
+
+sudo tar -xvzf wordpress-4.8.3.tar.gz -C /var/www/html
+
+5. Buka Browser dan ketikkan :
+
+http://localhost/wordpress/wp-admin/install.php
+
+6. Ikuti langkah-langkahnya
+Gambar 1,2,3
+
+7. Akan diminta unutk membuat file wp-config.php.Buat wp-config.php di /var/www/html
+
+8. Ikuti langk-langkat selanjutnya hingga selesai
+Gambar 4,5
+
+9. Log in ke akun wordpress
+Gambar 6
+
+10. Buka menu plugin dan klik tombol add new
+Gambar 7
+
+11. Ketikkan video player dan league manager di kotak pencarian dan klik install untuk masing-masing
+Gmabar 8
+Gambar 9
+
+12. Jika muncul error terkait FTP tambahkan baris berikut di wp-config.php :
+
+define('FSMETHOD', 'direct');
+
+13. Jika muncul error terkait PERMISION , ketikkan perintah berikut di terminal :
+
+sudo chown -R www-data:www-data  /var/www/html/wordpress
+find sudo /var/www/html -type d -exec chmod 755 {} \;
+find sudo /var/www/html -type f -exec chmod 644 {} \;
+
+14. Jika plugin berhasil terinstall, tampilan akan menjadi seperti berikut :
+
+Gambar 10
 ## Langkah Penetrasi SQL Injection
 
 # Kesimpulan dan Saran
