@@ -11,7 +11,7 @@ Dalam laporan ini akan dilakukan uji penetrasi  terhadap server. Dalam praktikny
 # Dasar teori
 
 ## OS Ubuntu Dekstop
-Ubuntu adalah salah satu distribusi Linux yang berbasiskan pada Debian dan memiliki interface desktop. Proyek Ubuntu disponsori oleh Canonical Ltd (perusahaan milik Mark Shuttleworth). Kami menggunakan os ubuntu server versi 17.04-dekstop
+Ubuntu adalah salah satu distribusi Linux yang berbasiskan pada Debian dan memiliki interface desktop. Proyek Ubuntu disponsori oleh Canonical Ltd (perusahaan milik Mark Shuttleworth). Kami menggunakan os ubuntu server versi 16.04-dekstop
 
 ## Tools Wordpress
 
@@ -22,9 +22,9 @@ WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat popule
 
 Video player adalah plugin video WordPress yang memungkinkan Anda menambahkan video ke situs web dengan mudah. Ini memiliki kemungkinan untuk mengatur video menjadi daftar putar dan memilih tata letak pilihan untuk pemain
 
-## Plugin League Mnager
+## Plugin League Manager
 
-Lqague amanager adalah Plugin yangdirancang untuk mengelola liga olahraga dan menampilkannya di blog Anda.
+League manager adalah Plugin yangdirancang untuk mengelola liga olahraga dan menampilkannya di blog Anda.
 
 ## Tools SQLMap
 
@@ -97,6 +97,7 @@ find sudo /var/www/html -type f -exec chmod 644 {} \;
 ![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
 
 ### Instalasi WPScan
+
 1. Install git terlebih dahulu dengan perintah
 ```
 sudo apt-get install git
@@ -111,8 +112,21 @@ git clone https://github.com/wpscanteam/wpscan.git
 cd wpscan
 sudo gem install bundler && bundle install --without test development
 ```
+4. Lakukan perintah ini untuk melakukan pull terbaru dari git WPScan dan update database
+```
+git pull
+ruby wpscan.rb --update
+```
+5. Lakukan pengecekan plugin vulnerabilities plugin dari wordpress dengan perintah dibawah ini
+```
+ruby wpscan.rb --url http://yourwebsite.com --enumerate vp
+```
+Karena menggunakan localhost ganti http://yourwebsite.com dengan localhost/wordpress
+6. Berikut adalah hasil dari pengecekan tersebut
 
+7.
 ### Instalasi sqlmap
+
 1. Lakukan git clone dari repository sqlmap dan masuk ke folder sqlmap dengan perintah sebagai berikut
 ```
 https://github.com/sqlmapproject/sqlmap.git
