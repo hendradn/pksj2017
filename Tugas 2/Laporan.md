@@ -139,7 +139,14 @@ Karena menggunakan localhost ganti http://yourwebsite.com dengan localhost/wordp
 3. Berikut adalah hasil dari pengecekan tersebut
 ![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
 
-4.
+4. Siapkan wordlist.txt yang berisi daftar-daftar password yang sering digunakan. file tersebut bisa dicari di internet. Taruh file tersebut di folder wp scan. Kemudian jalan perintah berikut :
+```
+ruby wpscan.rb --url http://localhost/wordpress --wordlist wordlist.txt threads 50
+```
+
+5. Jika selesai dijalnkan dan password ditemukan, tampilan di terminal menjadi seperti berikut :
+
+![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/12-instalasi.PNG)
 
 # Kesimpulan dan Saran
 ## Defense
