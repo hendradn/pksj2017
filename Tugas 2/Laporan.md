@@ -94,7 +94,7 @@ find sudo /var/www/html -type f -exec chmod 644 {} \;
 ```
 14. Jika plugin berhasil terinstall, tampilan akan menjadi seperti berikut :
 
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
+
 
 ### Instalasi WPScan
 
@@ -124,7 +124,7 @@ ruby wpscan.rb --url http://yourwebsite.com --enumerate vp
 Karena menggunakan localhost ganti http://yourwebsite.com dengan localhost/wordpress
 
 6. Berikut adalah hasil dari pengecekan tersebut
-
+![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
 
 7.
 ### Instalasi sqlmap
