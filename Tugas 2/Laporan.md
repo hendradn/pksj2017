@@ -96,7 +96,7 @@ find sudo /var/www/html -type f -exec chmod 644 {} \;
 
 ![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
 
-### Instalasi WPScan dan sqlmap
+### Instalasi WPScan
 1. Install git terlebih dahulu dengan perintah
 ```
 sudo apt-get install git
@@ -110,6 +110,17 @@ sudo apt-get install libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-
 git clone https://github.com/wpscanteam/wpscan.git
 cd wpscan
 sudo gem install bundler && bundle install --without test development
+```
+
+### Instalasi sqlmap
+1. Lakukan git clone dari repository sqlmap dan masuk ke folder sqlmap dengan perintah sebagai berikut
+```
+https://github.com/sqlmapproject/sqlmap.git
+cd sqlmap
+```
+2. Jalankan sqlmap dengan menggunakan python
+```
+python sqlmap.py
 ```
 
 ## Langkah Penetrasi SQL Injection
