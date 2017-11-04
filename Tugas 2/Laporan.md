@@ -95,6 +95,23 @@ find sudo /var/www/html -type f -exec chmod 644 {} \;
 14. Jika plugin berhasil terinstall, tampilan akan menjadi seperti berikut :
 
 ![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
+
+### Instalasi WPScan dan sqlmap
+1. Install git terlebih dahulu dengan perintah
+```
+sudo apt-get install git
+```
+2. Install prerequisites
+```
+sudo apt-get install libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
+```
+3. Clone git main branch dari WPScan, kemudian masuk ke folder WPScan, dan masukkan perintah sebagai berikut(line 3)
+```
+git clone https://github.com/wpscanteam/wpscan.git
+cd wpscan
+sudo gem install bundler && bundle install --without test development
+```
+
 ## Langkah Penetrasi SQL Injection
 
 # Kesimpulan dan Saran
