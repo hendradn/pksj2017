@@ -124,7 +124,7 @@ ruby wpscan.rb --url http://yourwebsite.com --enumerate vp
 Karena menggunakan localhost ganti http://yourwebsite.com dengan localhost/wordpress
 
 6. Berikut adalah hasil dari pengecekan tersebut
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
+![alt_text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
 
 7.
 ### Instalasi sqlmap
