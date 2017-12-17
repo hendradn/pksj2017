@@ -6,13 +6,43 @@
 
 # Pendahuluan
 
-Dalam laporan ini akan dilakukan uji penetrasi  terhadap server. Dalam praktiknya Kami menggunakan os ubuntu-14.04.5-server-i386 sebagai server dan dan os ubuntu-17.04-dekstop sepagai penyerang. tools yang kami pakai dalam uji coba adalah hydra dan ncrack. Dalam laporan ini akan dilakukan 2 kali uji coba penetrasi, dimana yang pertama virtual server hanya terinstall openssh . Yang kedua viertual server terinstall openssh dan fail2ban
+Dalam laporan berisi cara penggunaan DVWA, Cuckoo dan Snort. DVWA adalah singkatan dari Damn Vulnerable Web Application, DVWA sendiri merupakan sebuah website yang sudah dirancang sedemikian rupa sehingga memiliki banyak celah keamanan untuk di explore. Cuckoo adalah sistem penganalisa malware. Snort adalah sistem penganalisa paket. Laporan ini akan berisi instalasi,konfigurasi dan beberapa seknario percobaan masing-masing aplikasi tersebut
 
 # DVWA
+Prerequisite:
+1. Iso Backtrack 5 GNOME 64 bit
+2. Iso Metasploitable-linux-2.0.0
+3. Iso Ubuntu Dekstop 16.04
+4. Windows 7/8/10
 ## Konfigurasi
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Buat DHCP server pada VMWare dengan mengetikkan perintah berikut di cmd
+```
+VBoxManage dhcpserver add --netname intnet --ip 10.0.1.1 --netmask 255.255.255.0 --lowerip 10.0.1.100 --upperip 10.0.1.200  --enable
+```
+Ket = perintah di atas akan memberi ip address dalam rentang 10.0.1.100 sampai 10.0.1.200
+2. Setting Network Virtual OS Metsploitable
+Klik Kanan Virtual OS -> Setting -> Buka Tab Network -> isi Attached Netwrok : Internal Network dan Name : intnet(nama dhcp server Langkah 1)
 
+Gambar 1
+
+Jika Berhasil , maka akan didapatkan ip dalam rentang 10.0.1.100 sampai 10.0.1.200 :
+
+Gambar 2
+
+3. Lakukan Hal tersebut pada Virtual OS backtrack dan viertual OS ubuntu
+4. Setting security DVWA menjadi Low
+Buka ip Virtual OS metasploitable pada browser di virtual OS Ubuntu. contoh = 10.0.1.100/dvwa
+
+Gambar 3
+
+Login dengan username : admin , password : password
+
+Gambar 4
+
+Klik Tab DVWA Security, Pilih Low, SUBMIT
+
+Gambar 5
 ## Testing
 ### Lesson 4: Using Metasploit with Command Execution
 
