@@ -77,8 +77,41 @@ exploit
 
 ### Lesson 5: Using Tamper Data with crack_web_form.pl
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Enable add on Tamper Data pada firefox di Backtrack
+GAmbar 9
 
+2. Buka Halaman DVWA dengan firefox di Backtrack
+3. Start Add on Tamper Data (Firefox->Tools->Tamper Data -> STart Tamper)
+
+Gambar 10
+4. Login dengan akun username : admin dan password : password pada halaman DVWA
+5. AKan muncul notifikasi Sumbit tamper data. Uncheck textbox dan klik submit
+
+Gambar 11
+
+6. Copy data POSTDATA dalam REQUEST HEADER padasalah satu data yang method-nya POST
+
+Gambar 12
+
+7. copy data tersebut pada notepad
+8. Login sekali lagi dengan username dan password yang salah
+9. AKan muncul tulisan Login FAiled . masukkan tulisan ini pada notepad sebelumnya bersamaan dengan data POSTDATA
+10. Buat direktory pentest/password/cwf
+11. download http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson5/cwf.tar.gz , masukkan dalam folder tersebut
+12. JALankan perintah-perintah berikut secara berurutan
+```
+    cd /pentest/passwords/cwf
+    ls -l
+    tar xovfz cwf.tar.gz
+    chmod 700 crack_web_form.pl
+```
+13. Jalankan perintah :
+```
+./crack_web_form.pl -U admin -P password.txt -http "10.0.1.100/dvwa/login.php" -data "username=USERNAME&password=PASSWORD&Login=Login" -M "Login failed"
+```
+Ket: 10.0.1.100->IP metasploitable
+
+Gambar 13
 ### Lesson 6: Manual SQL Injection, John the Ripper
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
