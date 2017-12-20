@@ -497,6 +497,14 @@ Install Windows XP pada virtualbox yang telah di download pada ubuntu. Alokasika
 ```
 netstat –aon
 ```
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/netstat.PNG)
+12. Atur dorwarding dan fitering dari Host OS dengan perintah berikut ini:
+```
+sudo iptables -A FORWARD -o eth0 -i vboxnet0 -s 192.168.56.0/24 -m conntrack --ctstate NEW -j ACCEPT 
+sudo iptables -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
+sudo iptables -A POSTROUTING -t nat -j MASQUERADE 
+sudo sysctl -w net.ipv4.ip_forward=1 
+```
 
 ## Testing
 
