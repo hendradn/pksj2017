@@ -501,7 +501,7 @@ Install Windows XP pada virtualbox yang telah di download pada ubuntu. Alokasika
 netstat –aon
 ```
 
-![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/35.PNG)
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/35.png)
 
 12. Atur dorwarding dan fitering dari Host OS dengan perintah berikut ini:
 ```
