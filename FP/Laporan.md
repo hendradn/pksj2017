@@ -17,11 +17,11 @@
 2. [Cuckoo](#cuckoo)
 * [Instalasi](#instalasi)
 * [Konfigurasi](#konfigurasi-1)
-* [Konfigurasi](#testing-1)
+* [Testing](#testing-1)
 3. [Snort](#snort)
 * [Instalasi](#instalasi-1)
 * [Konfigurasi](#konfigurasi-2)
-* [Konfigurasi](#testing-2)
+* [Testing](#testing-2)
 
 # Pendahuluan
 
