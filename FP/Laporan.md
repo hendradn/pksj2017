@@ -397,7 +397,17 @@ Pada instalasi Cuckoo ini kami menggunakan dua OS, satu sebagai Host dan satu se
 
 2. Aktifkan Shared Files pada Machine > Settings, pilih Shared Folder dan klik tambah shared folder baru. Kemudian akan muncul dialog box, masukkan folder yang akan di share pada folder path, kemudian centang ketiga option(folder merupakan folder utama windows, disini contoh menggunakan Windows 8.1)
 
-3. Install Virtualbox pada Ubuntu dengan perintah
+3. Install Guest Addition CD Image pada Ubuntu, kemudian restart ubuntu setelah selesai
+
+4. Masukkan perintah berikut untuk menambahkan user agar mendapatkan permission untuk melihat isi folder
+```
+sudo adduser (nama user) vboxsf
+```
+Restart Ubuntu.
+
+5. Step 2-4 merupakan step optional, berguna jika user telah terlanjur mendownload file iso Windows XP pada OS utama. Step 2-4 akan digunakan pada Host dan Guest OS untuk sharing file.
+
+6. Install Virtualbox pada Ubuntu dengan perintah
 ```
 sudo apt-get update
 sudo apt-get install virtualbox
@@ -473,6 +483,20 @@ Install Windows XP pada virtualbox yang telah di download pada ubuntu. Alokasika
 
 5. Pilih Drive yang diinginkan, kemudian pada bagian volder isikan \\vboxsrv\(nama folder di host). Step 4 dan 5 bisa di skip, karena pada saat kami melakukan step ini ternyata secara otomatis windows telah menampilkan shared folder.
 
+6. Install Python dan PIL (Python Imaging Libary) pada Windows XP.
+
+7. Matikan firewall, antivirus, dan auto-update pada Windows XP.
+
+8. Copy file python agent.py pada ubuntu ke dalam Share Folder, file bisa ditemukan pada direktori penginstalan Cuckoo.
+
+9. Pindahkan file kedalam C:/Python27, kemudian rename file menjadi Agent.pyw. Jalankan file tersebut.
+
+10. Copy file Agent.pyw ke dalam C:\Documents and Settings\(nama user)\Start Menu\Programs\Startup.
+
+11. Akan ada socket baru yang melakukan listening kepada 0.0.0.0:8000, bisa di cek dengan memasukkan perintah berikut ini pada command line:
+```
+netstat –aon
+```
 
 ## Testing
 
