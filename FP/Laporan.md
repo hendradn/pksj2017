@@ -386,12 +386,12 @@ Ket = isi cookie dan location diisi sesuai dengan langkah 1 dan 3
 
 # CUCKOO
 ## Instalasi
-
 Panduan:
 ```
 Buku Cuckoo Malware Analysis
 Video Youtube: Automated Malware Analysis with Cuckoo
 ```
+### Pendahuluan
 Pada instalasi Cuckoo ini kami menggunakan dua OS, satu sebagai Host dan satu sebagai Guest. Kami menggunakan Ubuntu versi 16.04 LTS 64bit sebagai Host dan Windows XP SP3 32bit sebagai Guest. Berikut merukapan langkah instalasi kedua OS dan Cuckoo:
 1. Instalasi OS Ubuntu di virtualbox seperti tugas 1 dan 2. Kemudian jalankan Linux seperti biasa
 
@@ -402,8 +402,8 @@ Pada instalasi Cuckoo ini kami menggunakan dua OS, satu sebagai Host dan satu se
 sudo apt-get update
 sudo apt-get install virtualbox
 ```
-4. Install aplikasi-aplikasi yang akan dibutuhkan Cuckoo nantinya. Berikut tata cara penginstalan aplikasi yang dibutuhkan oleh Cuckoo:
 ### Instalasi Program Tambahan
+Install aplikasi-aplikasi yang akan dibutuhkan Cuckoo nantinya. Berikut tata cara penginstalan aplikasi yang dibutuhkan oleh Cuckoo:
 1. Install Python dengan perintah:
 ```
 sudo apt-get install python
@@ -412,9 +412,8 @@ sudo apt-get install python
 ```
 sudo apt-get install python-sqlalchemy
 ```
-
-5. Install aplikasi-aplikasi berikut ini untuk memperlancar running dari Cuckoo:
 ### Instalasi Program Optional
+Install aplikasi-aplikasi berikut ini untuk memperlancar running dari Cuckoo
 1. Berikut merupakan beberapa program atau modul yang kemungkinan besar akan dibutuhkan, yaitu:
 -dpkt
 -jinja2
@@ -453,15 +452,27 @@ sudo python setup.py install
 ```
 sudo apt-get install tcpdump
 ```
-
-6. Install Cuckoo di Host OS, ada dua cara untuk melakukan instalasi ini, pertama download manual, atau melalui git clone. Untuk instalasi melalui git clone masukkan perintah ini pada folder home:
+### Instalasi Cuckoo
+Install Cuckoo di Host OS, ada dua cara untuk melakukan instalasi ini, pertama download manual, atau melalui git clone. Untuk instalasi melalui git clone masukkan perintah ini pada folder home:
 ```
 git clone git://github.com/cuckoobox/cuckoo.git
 ```
 
 ## Konfigurasi
+### Pendahuluan
+Install Windows XP pada virtualbox yang telah di download pada ubuntu. Alokasikan memory hard drive sekitar 10GB.
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+### Konfigurasi Network
+1. Setelah berhasil melakukan penginstalan. Buka File > Preferences (dalam keadaan windows xp mati), kemudian pilih network, dan tambahkan host-only network.
+
+2. Kemudian klik kanan pada Guest OS, pilih Settings, Network kemudian ganti menjadi Host-only Adapter.
+
+3. Buat Shared Folder antara Guest OS dengan Host OS dengan cara yang sama pada bagian Instalasi.
+
+4. Dalam Windows XP, klik Start, kemudian klik kanan pada My Computer, pilih Map Network Drive
+
+5. Pilih Drive yang diinginkan, kemudian pada bagian volder isikan \\vboxsrv\(nama folder di host). Step 4 dan 5 bisa di skip, karena pada saat kami melakukan step ini ternyata secara otomatis windows telah menampilkan shared folder.
+
 
 ## Testing
 
