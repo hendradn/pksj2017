@@ -387,14 +387,61 @@ Ket = isi cookie dan location diisi sesuai dengan langkah 1 dan 3
 # CUCKOO
 ## Instalasi
 
+Panduan:
+```
+Buku Cuckoo Malware Analysis
+Video Youtube: Automated Malware Analysis with Cuckoo
+```
 Pada instalasi Cuckoo ini kami menggunakan dua OS, satu sebagai Host dan satu sebagai Guest. Kami menggunakan Ubuntu versi 16.04 LTS 64bit sebagai Host dan Windows XP SP3 32bit sebagai Guest. Berikut merukapan langkah instalasi kedua OS dan Cuckoo:
 1. Instalasi OS Ubuntu di virtualbox seperti tugas 1 dan 2. Kemudian jalankan Linux seperti biasa
 
 2. Aktifkan Shared Files pada Machine > Settings, pilih Shared Folder dan klik tambah shared folder baru. Kemudian akan muncul dialog box, masukkan folder yang akan di share pada folder path, kemudian centang ketiga option(folder merupakan folder utama windows, disini contoh menggunakan Windows 8.1)
 
-3. Install aplikasi-aplikasi yang akan dibutuhkan Cuckoo nantinya. Berikut tata cara penginstalan aplikasi yang dibutuhkan oleh Cuckoo:
-### Instalasi Python
+3. Install Virtualbox pada Ubuntu dengan perintah
+```
+sudo apt-get update
+sudo apt-get install virtualbox
+```
+4. Install aplikasi-aplikasi yang akan dibutuhkan Cuckoo nantinya. Berikut tata cara penginstalan aplikasi yang dibutuhkan oleh Cuckoo:
+### Instalasi Program Tambahan
+1. Install Python dengan perintah:
+```
+sudo apt-get install python
+```
+2. Install SqlAchemy sebagai toolkit database untuk python dengan perintah:
+```
+sudo apt-get install python-sqlalchemy
+```
 
+5. Install aplikasi-aplikasi berikut ini untuk memperlancar running dari Cuckoo:
+### Instalasi Program Optional
+1. Berikut merupakan beberapa program atau modul yang kemungkinan besar akan dibutuhkan, yaitu:
+-dpkt
+-jinja2
+-magic
+-ssdeep
+-pydeep
+-pymongo
+-yara dan yara python
+-libvirt
+-bottlepy
+-pefile
+Semua modul tersebut bisa diinstall dalam 1 line baris berikut:
+```
+sudo apt-get install python-dpkt python-jinja2 python-magic python-pymongo python-libvirt python-bottle python-pefile ssdeep
+```
+2. Install dependencies dengan perintah:
+```
+sudo apt-get install build-essential git libpcre3 libpcre3-dev libpcre++-dev
+```
+3. Install pydeep dengan cara clone dari git source dan masukkan ke opt folder:
+```
+cd /opt
+git clone https://github.com/kbandla/pydeep.git pydeep
+cd /opt/pydeep/
+sudo python setup.py build
+sudo python setup.py install
+```
 ## Konfigurasi
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
