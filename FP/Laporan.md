@@ -442,6 +442,23 @@ cd /opt/pydeep/
 sudo python setup.py build
 sudo python setup.py install
 ```
+4. Install Yara tetap dalam folder /opt dengan perintah berikut:
+```
+git clone --recursive https://github.com/VirusTotal/yara-python
+cd yara-python
+sudo python setup.py build
+sudo python setup.py install
+```
+5. Install tcpdump dengan perintah berikut:
+```
+sudo apt-get install tcpdump
+```
+
+6. Install Cuckoo di Host OS, ada dua cara untuk melakukan instalasi ini, pertama download manual, atau melalui git clone. Untuk instalasi melalui git clone masukkan perintah ini pada folder home:
+```
+git clone git://github.com/cuckoobox/cuckoo.git
+```
+
 ## Konfigurasi
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
