@@ -396,6 +396,9 @@ Pada instalasi Cuckoo ini kami menggunakan dua OS, satu sebagai Host dan satu se
 1. Instalasi OS Ubuntu di virtualbox seperti tugas 1 dan 2. Kemudian jalankan Linux seperti biasa
 
 2. Aktifkan Shared Files pada Machine > Settings, pilih Shared Folder dan klik tambah shared folder baru. Kemudian akan muncul dialog box, masukkan folder yang akan di share pada folder path, kemudian centang ketiga option(folder merupakan folder utama windows, disini contoh menggunakan Windows 8.1)
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/33.PNG)
+
+![alt text](https://github.com/hendradn/pksj2017/blob/master/FP/Screenshoot/34.PNG)
 
 3. Install Guest Addition CD Image pada Ubuntu, kemudian restart ubuntu setelah selesai
 
