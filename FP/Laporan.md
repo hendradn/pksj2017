@@ -387,7 +387,13 @@ Ket = isi cookie dan location diisi sesuai dengan langkah 1 dan 3
 # CUCKOO
 ## Instalasi
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Pada instalasi Cuckoo ini kami menggunakan dua OS, satu sebagai Host dan satu sebagai Guest. Kami menggunakan Ubuntu versi 16.04 LTS 64bit sebagai Host dan Windows XP SP3 32bit sebagai Guest. Berikut merukapan langkah instalasi kedua OS dan Cuckoo:
+1. Instalasi OS Ubuntu di virtualbox seperti tugas 1 dan 2. Kemudian jalankan Linux seperti biasa
+
+2. Aktifkan Shared Files pada Machine > Settings, pilih Shared Folder dan klik tambah shared folder baru. Kemudian akan muncul dialog box, masukkan folder yang akan di share pada folder path, kemudian centang ketiga option(folder merupakan folder utama windows, disini contoh menggunakan Windows 8.1)
+
+3. Install aplikasi-aplikasi yang akan dibutuhkan Cuckoo nantinya. Berikut tata cara penginstalan aplikasi yang dibutuhkan oleh Cuckoo:
+### Instalasi Python
 
 ## Konfigurasi
 
