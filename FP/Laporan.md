@@ -524,54 +524,58 @@ sudo sysctl -w net.ipv4.ip_forward=1
 4. Jalankan installer Snort yang sudah diunduh sebelumnya.
 - Accept license agreement.
 - Pilih komponen yang diperlukan, dalam hal ini dicentang semua (snort, dynamic modules, documentation). Klik OK.
-- Pilih root directory untuk Snort, kita akan menggunakan default root directory c:\Snort.
+- Pilih root directory untuk Snort, kita akan menggunakan default root directory ```c:\Snort```.
 - Pada saat akhir, akan muncul window yang menyuruh kita untuk mengunduh WinPcap 4.1.1 walaupun versi yang sekarang sudah 4.1.3, jadi diabaikan saja. Klik OK.
 5. Extract rules yang sudah diunduh sebelumnya.
 - Extract isi folder rules ke c:\Snort\rules.
 - Extract isi folder preproc_rules ke c:\Snort\preproc_rules.
 - Sisanya diabaikan saja.
 6. Untuk mengecek apakah Snort sudah berfungsi
-- ketik **cd c:\Snort\bin** kemudian enter
-- ketik **snort -V**, akan muncul versi Snort yang kita gunakan
+- ketik ```cd c:\Snort\bin``` kemudian enter
+- ketik ```snort -V```, akan muncul versi Snort yang kita gunakan
 
 ![image](https://user-images.githubusercontent.com/29043129/34213075-ce324358-e5d0-11e7-9855-722b6f1f54a8.png)
 
 
 ## Konfigurasi
 
-1. Buka file C:\Snort\etc\snort.conf
-2. Pada HOME_NET, kita akan mengganti range IP yang akan kita protect sebagai Home.  Buka Command Prompt, dan ketik ipconfig:
+1. Buka file ```C:\Snort\etc\snort.conf```
+2. Pada HOME_NET, kita akan mengganti range IP yang akan kita protect sebagai Home.  Buka Command Prompt, dan ketik ```ipconfig```:
 ![image](https://user-images.githubusercontent.com/29043129/34206527-772012be-e5b9-11e7-941b-dc0d5ee8230d.png)
-Pada Wireless LAN adapter Wi-Fi kita mendapatkan network yang akan kita protect, kemudian ganti **any** menjadi **192.168.1.1/24**
-3. Kemudian pada EXTERNAL_NET, selain network yang kita protect akan kita anggap sebagai external, jadi ganti **any** menjadi **!$HOME_NET**
-4. Pada RULE_PATH ganti **../rules** menjadi **c:\Snort\rules**
-5. Pada PREPROC_RULE_PATH ganti **../preproc_rules** menjadi **c:\Snort\preproc_rules**
-6. Comment bagian SO_RULE_PATH
-7. Comment juga bagian WHITE_LIST_PATH & BLACK_LIST_PATH
-8. Untuk default log directory, uncomment **config logdir:** dan beri nilai **c:\Snort\log**
-9. Uncomment config logdir dan beri nilai c:\Snort\log
-10. Pada bagian dynamicpreprocessor directory ganti **/usr/local/lib/snort_dynamicpreprocessor/** menjadi **c:\Snort\lib\snort_dynamicpreprocessor**
-11. Pada bagian dynamicengine ganti **/usr/local/lib/snort_dynamicengine/libsf_engine.so** menjadi **c:\Snort\lib\snort_dynamicengine\sf_engine.dll** 
-12. Comment bagian dynamicdetection directory
+Pada Wireless LAN adapter Wi-Fi kita mendapatkan network yang akan kita protect, kemudian ganti ```any``` menjadi ```192.168.1.1/24```
+3. Kemudian pada ```EXTERNAL_NET```, selain network yang kita protect akan kita anggap sebagai external, jadi ganti ```any``` menjadi ```!$HOME_NET```
+4. Pada ```RULE_PATH``` ganti ```../rules``` menjadi ```c:\Snort\rules```
+5. Pada ```PREPROC_RULE_PATH``` ganti ```../preproc_rules``` menjadi ```c:\Snort\preproc_rules```
+6. Comment bagian ```SO_RULE_PATH```
+7. Comment juga bagian ```WHITE_LIST_PATH``` & ```BLACK_LIST_PATH```
+8. Untuk default log directory, uncomment ```config logdir:``` dan beri nilai ```c:\Snort\log```
+9. Uncomment ```config logdir``` dan beri nilai ```c:\Snort\log```
+10. Pada bagian ```dynamicpreprocessor directory``` ganti ```/usr/local/lib/snort_dynamicpreprocessor/``` menjadi ```c:\Snort\lib\snort_dynamicpreprocessor```
+11. Pada bagian ```dynamicengine``` ganti ```/usr/local/lib/snort_dynamicengine/libsf_engine.so``` menjadi ```c:\Snort\lib\snort_dynamicengine\sf_engine.dll``` 
+12. Comment bagian ```dynamicdetection directory```
 13. Comment bagian 
-**
+```
 preprocessor normalize_ip4
 preprocessor normalize_tcp: ips ecn stream
 preprocessor normalize_icmp4
 preprocessor normalize_ip6
-preprocessor normalize_icmp6**
+preprocessor normalize_icmp6
+```
 14. Comment bagian 
-**
+```
 preprocessor reputation: \
 memcap 500, \
 priority whitelist, \
 nested_ip inner, \
 whitelist $WHITE_LIST_PATH/white_list.rules, \
-blacklist $BLACK_LIST_PATH/black_list.rules**
+blacklist $BLACK_LIST_PATH/black_list.rules
+```
 15. Uncomment bagian
-**include $PREPROC_RULE_PATH/preprocessor.rules
+```
+include $PREPROC_RULE_PATH/preprocessor.rules
 include $PREPROC_RULE_PATH/decoder.rules
-include $PREPROC_RULE_PATH/sensitive-data.rules**
+include $PREPROC_RULE_PATH/sensitive-data.rules
+```
 
 ## Testing
 
@@ -580,12 +584,14 @@ include $PREPROC_RULE_PATH/sensitive-data.rules**
 1. Buka [Secrepo](http://www.secrepo.com/), pilih [Awesome Industrial Control System](https://github.com/hslatman/awesome-industrial-control-system-security)
 2. Download [PCAPS from the 23rd DEF CON](https://media.defcon.org/DEF%20CON%2023/DEF%20CON%2023%20villages/DEF%20CON%2023%20ics%20village/DEF%20CON%2023%20ICS%20Village%20packet%20captures.rar). Extract file tersebut di folder Downloads
 3. Run command prompt as administrator
-4. Ketik **cd C:\Snort\bin**, tekan enter
-5. Ketik **Snort -r C:\Users\Jason\Downloads\DEF CON 23 ICS Village packet captures.pcap** , tekan enter
+4. Beri perintah ```cd C:\Snort\bin```
+5. Beri perintah ```Snort -r C:\Users\Jason\Downloads\DEF CON 23 ICS Village packet captures.pcap``` 
 6. Berikut hasilnya
 ![image](https://user-images.githubusercontent.com/29043129/34211644-54278dec-e5cc-11e7-9cd7-fb16d74a2a04.png)
 ![image](https://user-images.githubusercontent.com/29043129/34211651-5aa5eeb6-e5cc-11e7-97dc-d4ef231353f9.png)
 
-# Refrensi
+# Referensi
   * http://www.computersecuritystudent.com/cgi-bin/CSS/process_request_v3.pl?HID=688b0913be93a4d95daed400990c4745&TYPE=SUB
+  * https://www.securityarchitecture.com/learning/intrusion-detection-systems-learning-with-snort/getting-and-installing-tools/
+  * https://www.securityarchitecture.com/learning/intrusion-detection-systems-learning-with-snort/configuring-snort/
   
